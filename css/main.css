@@ -9,7 +9,7 @@
 
 body {
   width: 100%;
-    text-align: center;
+  text-align: center;
   /* Firefox */
   display:-moz-box;
   -moz-box-orient:horizontal;
@@ -110,7 +110,7 @@ h1#defalt{
   font-family: 'Advent Pro', sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 64px;
+  font-size: 80px;
   color: #3DA8A4;
 
   text-align: center;
@@ -118,13 +118,13 @@ h1#defalt{
   padding-top: 50px;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, .1);
 
-}
+}/*
 .line {
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
   font-style: normal;
   margin: 0px auto;
-}
+}*/
 #as{
   font-family: 'Tenor Sans', sans-serif;
   color: #FF5879;
@@ -134,28 +134,37 @@ h1#defalt{
   text-shadow: 0 0 20px #FFFFFF,0 0 40px #FF5879, 0 0 60px #FFFFFF;
 }
 #container {
-    width: 850px;
+    width: 800px;
     margin: auto;
 }
 
 #menu{
-  width: 100%;
   padding: auto;
-  margin: 120px 25px auto;
+  margin: 100px auto;
   color: #3F2F69;
+
 }
-.menuin{
-  position: relative;
-  float: left;
-  width: 150px;
-  height: 150px;
-  margin: 0 5px;
+#menu ul{
+    list-style: none outside none;
+    float: left;
+    margin: 0 0 0 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
 }
-#menu a{
+
+#menu ul li{
+    float: left;
+    margin-right: 5px;
+    padding: 5px;
+    position: relative;
+    left: -50%;
+}
+#menu ul li a{
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   display: block;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100px;
@@ -175,10 +184,10 @@ h1#defalt{
   z-index: 10;
   text-shadow: 0px 0px 0px rgba(51, 51, 51, 1);
 }
-#menu a:hover{
+#menu ul li a:hover{
   font-weight: 700;
   top: -50px;
-  left:-50px;
+  left:0px;
   width: 200px;
   height: 200px;
   border-radius: 20%;
@@ -227,6 +236,14 @@ h1#defalt{
 #color5:hover{
   background: #333333;
   background: rgba(78,168,156,.9);
+}
+#color6{
+  background: #333333;
+  background: rgba(200,200,200,.4);
+}
+#color6:hover{
+  background: #333333;
+  background: rgba(200,200,200,.9);
 }
 section {
     margin-bottom: 20px;
