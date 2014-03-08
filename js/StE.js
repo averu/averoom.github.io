@@ -19,7 +19,7 @@ function send_contact_form() {
 
   // AjaxでPHPを呼び出す
   $.ajax({
-    type: 'GET',
+    type: 'POST',
     url: '../html/xmloutput.php', // 実行するPHPの相対パス
     cache: false,
     data: contact_form_contents, // PHPに渡すデータ。↑で定義。PHPでは$_POST['sender_name']のように、通常フォーム送信された時と同じように値が取得できる。
