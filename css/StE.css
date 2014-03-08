@@ -1,0 +1,223 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  font-family:"Meiryo UI",sans-serif;
+  width: 900px;
+  height:700px;
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-orient:horizontal;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari and Chrome */
+  display:-webkit-box;
+  -webkit-box-orient:horizontal;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+
+  /* W3C */
+  display:box;
+  box-orient:horizontal;
+  box-pack:center;
+  box-align:center;
+  /*background: #FFFFF7;*/
+  background: #fff;
+}
+.krile {
+    width: 500px;
+    height: 700px;
+    background: #1BA1E2;
+    padding: 1px;
+
+}
+#color-content{
+  width: 400px;
+  height: 700px;
+  background: #FFFFFF;
+  border: 1px solid;
+  border-color: #1BA1E2;
+  margin: 5px 5px;
+}
+ul#colorlist{
+  list-style-type: none;
+  padding:0px 0px 0px 0px;
+  margin: 20px;
+}
+li.item{
+  text-align:right;
+}
+.krile-content{
+  width: 500px;
+  height: 700px;
+  background: #FFFFFF;
+  /*border: 1px solid;*/
+  border-color: #1BA1E2;
+
+}
+.titlebar{
+  width: 500px;
+  height: 30px;
+  color: #FFFFFF;
+  background: #1BA1E2;
+}
+div#krile{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  padding: 5px 0px 0px 30px;
+}
+#top{
+  width: 500px;
+  height: 85px;
+  padding: 4px 0px;
+  overflow: hidden;
+}
+#icon{
+  float: left;
+  width: 48px;
+  height: 48px;
+  background: #DDDDDD;
+  margin: 0px 4px 0px 7px;
+}
+#write{
+  float: left;
+  width: 434px;
+  height: 78px;
+  margin: 0px 4px 0px 0px;
+  border: 1px solid;
+  border-color: #DDDDDD;
+}
+ul#tabbar{
+  font-size: 14px;
+  width: 500px;
+  height: 30px;
+  color: #E6E6E6;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+li.tab{
+  float: left;
+  margin: 3px 0px 3px 9px;
+}
+li#focus-tab{
+  color: rgba(51, 51, 51, 1);
+}
+li#select-tab{
+  color: rgba(51, 51, 51, .7);
+}
+li#default-tab{
+  color: rgba(51, 51, 51, .5);
+}
+#unread{
+  font-size: 12px;
+  color: #1BA1E2;
+  vertical-align:5px;
+}
+.timeline{
+  width: 485px;
+  height: 90px;
+  color: #000000;
+  padding: 10px 0px 0px 0px;
+  background: #1BA1E2;
+  background-color: rgba(27, 161, 226, .1);
+}
+#default-tl{
+  background: #000000;
+  background-color: rgba(0, 0, 0, 0);
+}
+#myself-tl{
+  background: #1BA1E2;
+  background-color: rgba(27, 161, 226, .1);
+}
+#retweet-tl{
+  background: #008A00;
+  background-color: rgba(0, 138, 0, .1);
+}
+#mention-tl{
+  background: #FA6800;
+  background-color: rgba(250, 104, 0, .1);
+}
+#direct-tl{
+  background: #A20025;
+  background-color: rgba(162, 0, 37, .1);
+}
+.icon{
+  float: left;
+  width: 48px;
+  height: 48px;
+  background: #DDDDDD;
+  margin: 0px 4px 30px 8px;
+}
+.user{
+  float: left;
+  width: 409px;
+  height: 12px;
+  margin: 0px 4px 6px 6px;
+}
+.sn{
+  font-weight: bold;
+  float: left;
+  font-size: 12px;
+  margin: 0px 6px 0px 1px;
+
+}
+#default-sn{
+  opacity: 1;
+  color: rgb(27, 161, 226);
+}
+#myself-sn{
+  opacity: 1;
+  color: rgb(27, 161, 226);
+}
+#retweet-sn{
+  opacity: 1;
+  color: rgb(0, 138, 0);
+}
+#mention-sn{
+  opacity: 1;
+  color: rgb(250, 104, 0);
+}
+#direct-sn{
+  opacity: 1;
+  color: rgb(162, 0, 37);
+}
+.name{
+  float: left;
+  font-size: 12px;
+  color: rgba(51, 51, 51, .7);
+}
+.tweet{
+  float: left;
+  width: 409px;
+  height: 30px;
+  font-size: 12px;
+  color: #000000;
+  margin: 6px 4px 0px 6px;
+}
+.bottom{
+  float: left;
+  width: 409px;
+  height: 20px;
+}
+.date{
+  float: left;
+  font-size: 10px;
+  color: rgba(51, 51, 51, .7);
+  margin: 10px 150px 0px 6px;
+}
+.marker{
+  float: left;
+  font-size: 20px;
+  color: rgba(51, 51, 51, .5);
+  margin: 0px 4px 0px 50px;
+  text-shadow: 0px 0px 2px rgba(51, 51, 51, .3);
+}
