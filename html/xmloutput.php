@@ -1,7 +1,7 @@
 <?php
 $filename = './xml/StarryEyesXml.xml';
 $copyname = './xml/StarryEyesXml'.(time()*rand(1, 8)).'.xml';
-echo $copyname;
+//echo $copyname;
 copy( $filename, $copyname);
 $xml = @simplexml_load_file($copyname);
 if ($xml) {
