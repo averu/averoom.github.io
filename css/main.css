@@ -9,7 +9,7 @@
 
 body {
   width: 100%;
-    text-align: center;
+  text-align: center;
   /* Firefox */
   display:-moz-box;
   -moz-box-orient:horizontal;
@@ -33,12 +33,19 @@ body {
 
 
 .header {
-  padding: 30px 0px 0px 0px;
-  margin: -30px auto;
+/*  padding: 200px 0px 0px 0px;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 800px;
+  height: 300px;
+  margin: auto;
 }
 .header1{
   display: block;
-  width: 30%;
+  width: 40%;
   border: 0;
   height: 3px;
   margin: 2px auto;
@@ -49,7 +56,7 @@ body {
 }
 .header2{
   display: block;
-  width: 55%;
+  width: 50%;
   border: 0;
   height: 5px;
   margin: 3px auto;
@@ -61,7 +68,7 @@ body {
 }
 .header3{
   display: block;
-  width: 70%;
+  width: 60%;
   border: 0;
   height: 7px;
   margin: 5px auto;
@@ -72,9 +79,9 @@ body {
 }
 .header4{
   display: block;
-  width: 85%;
+  width: 80%;
   border: 0;
-  height: 10px;
+  height: 13px;
   margin: 7px auto;
   background-image: -webkit-linear-gradient(left, rgba(121,204,190,0), rgba(121,204,190,0.80), rgba(121,204,190,0));
   background-image:    -moz-linear-gradient(left, rgba(121,204,190,0), rgba(121,204,190,0.80), rgba(121,204,190,0));
@@ -85,7 +92,7 @@ body {
   display: block;
   width: 100%;
   border: 0;
-  height: 13px;
+  height: 20px;
   margin: 11px auto;
   background-image: -webkit-linear-gradient(left, rgba(121,204,190,0), rgba(121,204,190,1), rgba(121,204,190,0));
   background-image:    -moz-linear-gradient(left, rgba(121,204,190,0), rgba(121,204,190,1), rgba(121,204,190,0));
@@ -110,12 +117,11 @@ h1#defalt{
   font-family: 'Advent Pro', sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 64px;
+  font-size: 96px;
   color: #3DA8A4;
 
   text-align: center;
-  margin: 0px 0px -53px 30px;
-  padding-top: 50px;
+  margin: 0px 0px -50px 0px;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, .1);
 
 }
@@ -128,7 +134,7 @@ h1#defalt{
 #as{
   font-family: 'Tenor Sans', sans-serif;
   color: #FF5879;
-  font-size: 72px;
+  font-size: 90px;
   vertical-align: -10px;
   text-shadow: 0px 0px 1px rgba(255,153,161, .1);
   text-shadow: 0 0 20px #FFFFFF,0 0 40px #FF5879, 0 0 60px #FFFFFF;
