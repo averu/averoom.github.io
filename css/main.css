@@ -10,7 +10,7 @@ body{
   /*font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
   margin: auto;
   font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 body,section::before{
   width: 100%;
@@ -51,12 +51,17 @@ header>h1{
   text-align: center;
 }
 .title{
-
   text-align: center;
+}
+@media only screen and (max-width : 480px) {
+.title {
+ 		  width:50%;
+  	}
 }
 #star{
   position: fixed;
   /*transform: translateY(-20%);*/
+  z-index: 1;
   width: 32px;
   top: 50%;
   left: 50%;
@@ -71,7 +76,7 @@ header>h1{
 }
 section {
   width: 100%;
-  height: 400px;
+  height: 450px;
   position: relative;
   border: solid 1px rgba(255, 255, 255, 0.1);
   -moz-box-sizing: border-box;
@@ -82,7 +87,9 @@ section {
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
 }
 section>div{
-  margin: 30px;
+  margin: 30px auto;
+  float: left;
+  width: 50%;
   color: #fff;
   text-shadow: 0 1px 5px #000;
   text-align: center;
