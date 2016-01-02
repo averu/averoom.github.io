@@ -43,20 +43,14 @@ header {
   width: 100%;
   /*transform: translateY(-50%);*/
 }
-header>h1{
-  /*font-family: 'Cutive Mono' ;*/
-  font-style: normal;
-  font-size: 60px;
-  color: #FFF;
-  text-align: center;
-}
 .title{
   text-align: center;
 }
-@media only screen and (max-width : 480px) {
-.title {
- 		  width:50%;
-  	}
+@media screen and (min-width : 480px) and (max-width: 768px){
+  .title > img {
+ 		max-width: 50%;
+    height: auto;
+	}
 }
 #star{
   position: fixed;
