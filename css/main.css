@@ -14,7 +14,7 @@ body{
 }
 body,section::before{
   width: 100%;
-  background-image: url(../img/background001.png);
+  background-image: url(../img/background002.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -58,14 +58,14 @@ header {
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  
+
 }
 #logo{
   margin:auto;
 }
 @media screen and (min-width : 300px) and (max-width: 768px){
   .title > img {
- 		max-width: 70%;
+ 		max-width: 80%;
     height: auto;
 	}
 }
