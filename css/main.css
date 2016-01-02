@@ -48,7 +48,7 @@ header {
 }
 @media screen and (min-width : 300px) and (max-width: 768px){
   .title > img {
- 		max-width: 50%;
+ 		max-width: 70%;
     height: auto;
 	}
 }
