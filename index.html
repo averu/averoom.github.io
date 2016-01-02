@@ -16,8 +16,41 @@
   <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 -->
   <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
 
-  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+$(function(){
+  //画面の高さを取得して、変数wHに代入
+  var wW = $(window).width();
+  var wH = $(window).height();
+  console.log(wH);
+  //高さを取得を取得して、変数divHに代入
+  var divW = $('.title').innerWidth();
+  var divH = $('.title').innerHeight();
+  console.log(divH);
+  // ボックス要素より画面サイズが大きければ実行
+  if(wW > divW){
+    // 横幅を加える
+    $('.title').css('width',wW+'px');
+  }
+  if(wH > divH){
+    // 高さを加える
+    $('.title').css('height',wH+'px');
+  }
+});
+$(window).resize(function() {
+  var wW = $(window).width();
+  var wH = $(window).height();
+  if(wW > 500){
+    // 高さを加える
+    $('.title').css('width',wW+'px');
+  }
+  if(wH > 500){
+    // 高さを加える
+    $('.title').css('height',wH+'px');
+  }
+});
+</script>
 </head>
 <body>
   <img id="star" src="./img/star.svg" >
@@ -30,7 +63,7 @@
   </nav>
   <header>
     <div class="title">
-      <img src="./img/title.png" />
+      <img id="logo" src="./img/title.png" />
     </div>
   </header>
   <section>
@@ -41,7 +74,7 @@
       <h1>ABOUT</h1>
       <p>Name: AVERU</p>
       <p>Twitter: @averoom</p>
-      <p>Pixiv: @averu(id=372131)</p>
+      <p>Pixiv: id=372131</p>
       <p></p>
     </div>
   </section>

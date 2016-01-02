@@ -39,12 +39,29 @@ nav>ul>li>a{
 header {
 /*  padding: 200px 0px 0px 0px;*/
   position: relative;
-  margin: 300px auto;
-  width: 100%;
+  /*margin: 300px auto;*/
   /*transform: translateY(-50%);*/
+
+  /*position: relative;
+  color: #eaeaea;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  text-shadow: 1 1 0.5px rgba(255,255,255,0.25);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  cursor: default;*/
 }
 .title{
   text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  
+}
+#logo{
+  margin:auto;
 }
 @media screen and (min-width : 300px) and (max-width: 768px){
   .title > img {
