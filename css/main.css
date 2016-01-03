@@ -11,10 +11,11 @@ body{
   margin: auto;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+
 }
 body,section::before{
   width: 100%;
-  background-image: url(../img/background002.png);
+  background-image: url(../img/background001.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
