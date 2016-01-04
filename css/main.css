@@ -1,11 +1,11 @@
 /* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
-   ========================================================================== */
+HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+========================================================================== */
 
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+Author's custom styles
+========================================================================== */
 body{
   /*font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
   margin: auto;
@@ -38,10 +38,10 @@ nav>ul>li>a{
   text-shadow: 0 0 2px rgba(0, 0, 0, .1);
 }
 header {
-/*  padding: 200px 0px 0px 0px;*/
+  /*  padding: 200px 0px 0px 0px;*/
   position: relative;
   /*margin: 300px auto;*/
-  /*transform: translateY(-50%);*/
+  transform: translateY(-50%);
 
   /*position: relative;
   color: #eaeaea;
@@ -57,18 +57,19 @@ header {
 }
 .title{
   text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-
+}
+.title > div > img {
+  width: 150%;
+  height: auto;
 }
 #logo{
   margin:auto;
 }
 @media screen and (min-width : 300px) and (max-width: 768px){
-  .title > img {
- 		max-width: 80%;
+  .title > div> img {
+    max-width: 80%;
     height: auto;
-	}
+  }
 }
 #star{
   position: fixed;
