@@ -58,10 +58,6 @@ header {
 .title{
   text-align: center;
 }
-.title > div > img {
-  width: 150%;
-  height: auto;
-}
 #logo{
   margin:auto;
 }
