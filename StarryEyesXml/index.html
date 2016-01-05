@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>StarryEyesXml</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript" src="./js/prototype.js"></script>
+  <script type="text/javascript" src="./js/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="./js/farbtastic.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+  <script type="text/javascript" src="./js/ObjTree.js"></script>
+  <script type="text/javascript" src="./js/jquery.color.utils-0.1.0.js"></script>
+  <link rel="stylesheet" href="./css/farbtastic.css" type="text/css" />
+  <link rel="stylesheet" href="./css/main.css" type="text/css" >
+  <script type="text/javascript" charset="utf-8">
+    $(function(){
+      $("#xml-output").css("display", "none");
+      $("#xml-submit").click(function(){
+        $("#xml-output").toggle();
+      });
+    });
+    $(document).ready(function() {
+      var f = $.farbtastic('#picker');
+      var p = $('#picker').css('opacity', 1);
+      var selected;
+      var selectid;
+      var selectkrile;
+
+      $('.colorwell').each(function () {
+        f.linkTo(this);
+        $(this).css('opacity', 0.75);
+      }).focus(function() {
+        if (selected) {
+          $(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+        }
+        f.linkTo(this);
+        $(selected = this).css('opacity', 1).addClass('colorwell-selected');
+        selectname = selected.name;
+        selectkrile = "." + selected.name;
+        selectid = "#" + selected.name + '-color';
+        var changecss;
+        if(selectname == 'tweet' || selectname == 'tab'){
+          changecss = 'color';
+        }else if(selectname.substr(0, 2) == 'tl'){
+          changecss = 'backgroundColor';
+          selectid = "#"+selectname.slice(2)+'-tl-color';
+        }else{
+          changecss = 'backgroundColor';
+        }
+        $(selectkrile).css(changecss, $(selectid).val());
+        $.farbtastic('#picker').linkTo(function(c) {
+          $(selectid).val(c).css({
+            backgroundColor: c,
+            color: this.hsl[2] > 0.5 ? '#000': '#fff'
+          });
+          var r = parseInt(c.substr(1, 2), 16);
+          var g = parseInt(c.substr(3, 2), 16);
+          var b = parseInt(c.substr(5, 2), 16);
+          console.log(r+','+g+','+b);
+          if(selectname == 'tab'){
+            $(selectkrile).css(changecss, c);
+            $('#focus-tab').css(changecss, 'rgba('+r+','+g+','+b+','+1+')');
+            $('#select-tab').css(changecss, 'rgba('+r+','+g+','+b+','+0.7+')');
+            $('#default-tab').css(changecss, 'rgba('+r+','+g+','+b+','+0.5+')');
+          }else if(selectname.substr(0, 2) == 'tl'){
+            var tlname = "#"+selectname.slice(2);
+            $(tlname+'-tl').css(changecss, c);
+            if(tlname == "#default"){
+              $(tlname+'-tl').css(changecss, 'rgba('+r+','+g+','+b+','+0+')');
+            }else{
+              $(tlname+'-tl').css(changecss, 'rgba('+r+','+g+','+b+','+0.09+')');
+            }
+            $(tlname+'-sn').css('color', c);
+            $(tlname+'-sn').css('color', 'rgba('+r+','+g+','+b+','+1+')');
+          }else{
+            $(selectkrile).css(changecss, c);
+          }
+            var ccolor = $.fmtColor(c);
+            console.log(selectid);
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+<header>
+  <h1>StarryEyesXml<div id="hline"></div>
+  </h1>
+
+</header>
+
+<div id="all">
+  <div id="color-content">
+    <ul id="colorlist">
+    <form onclick="xml_update()">
+      <li id="picker"></li>
+      <li class="item"><label for="color1">GlobalKeyColor:</label>
+        <input type="text" id="krile-color" name="krile" class="colorwell"
+        value="#1BA1E2" /></li>
+      <li class="item"><label for="color2">TitleBarColor:</label>
+        <input type="text" id="titlebar-color" name="titlebar" class="colorwell"
+        value="#1BA1E2" /></li>
+      <li class="item"><label for="color3">BaseColor:</label>
+        <input type="text" id="krile-content-color" name="krile-content" class="colorwell" value="#FFFFFF" /></li>
+      <li class="item"><label for="color4">TimelineText:</label>
+        <input type="text" id="tweet-color" name="tweet" class="colorwell" value="#000000" /></li>
+      <li class="item"><label for="color5">Tab:</label>
+        <input type="text" id="tab-color" name="tab" class="colorwell" value="#123456" /></li>
+      <li class="item"><label for="color6">TL Default:</label>
+        <input type="text" id="default-tl-color" name="tldefault" class="colorwell" value="#1BA1E2" /></li>
+      <li class="item"><label for="color7">TL Myself:</label>
+        <input type="text" id="myself-tl-color" name="tlmyself" class="colorwell" value="#1BA1E2" /></li>
+      <li class="item"><label for="color8">TL Retweet:</label>
+        <input type="text" id="retweet-tl-color" name="tlretweet" class="colorwell" value="#008A00" /></li>
+      <li class="item"><label for="color9">TL Mentions:</label>
+        <input type="text" id="mention-tl-color" name="tlmention" class="colorwell" value="#FA6800" /></li>
+      <li class="item"><label for="color10">TL Direct:</label>
+        <input type="text" id="direct-tl-color" name="tldirect" class="colorwell" value="#A20025" /></li>
+      <li class="item"><input type="hidden" name="answer" value="1">
+          <input id="xml-submit" value="Create">
+      </li>
+    </form>
+    </ul>
+  </div>
+  <div class="krile">
+    <div class="krile-content">
+      <div class="titlebar"><div id="krile">Krile STARRYEYES</div></div>
+      <div id="top">
+        <div id="icon"></div>
+        <div id="write"></div>
+      </div>
+      <ul id="tabbar">
+        <li class="tab" id="focus-tab">home</li>
+        <li class="tab" id="select-tab">me</li>
+        <li class="tab" id="default-tab">activities</li>
+        <span id="unread">2</span>
+      </ul>
+      <div class="timeline" id="default-tl">
+        <div class="icon"></div>
+        <div class="user">
+          <div class="sn" id="default-sn">USER</div>
+          <div class="name">name</div>
+        </div>
+        <div class="tweet">
+          デフォルトタイムライン<br>
+          The quick brown fox jumps over the lazy dog.
+        </div>
+        <div class="bottom">
+          <div class="date">
+            hh:mm:ss - day mo. yr.
+          </div>
+          <div class="marker">
+            ★ ⇄ ■
+          </div>
+        </div>
+      </div>
+      <div class="timeline" id="myself-tl">
+        <div class="icon"></div>
+        <div class="user">
+          <div class="sn" id="myself-sn">USER</div>
+          <div class="name">name</div>
+        </div>
+        <div class="tweet">
+          自分のツイート<br>
+          The quick brown fox jumps over the lazy dog.        </div>
+        <div class="bottom">
+          <div class="date">
+            hh:mm:ss - day mo. yr.
+          </div>
+          <div class="marker">
+            ★ ⇄ ■
+          </div>
+        </div>
+      </div>
+      <div class="timeline" id="retweet-tl">
+        <div class="icon"></div>
+        <div class="user">
+          <div class="sn" id="retweet-sn">USER</div>
+          <div class="name">name</div>
+        </div>
+        <div class="tweet">
+          リツイート<br>
+          The quick brown fox jumps over the lazy dog.        </div>
+        <div class="bottom">
+          <div class="date">
+            hh:mm:ss - day mo. yr.
+          </div>
+          <div class="marker">
+            ★ ⇄ ■
+          </div>
+        </div>
+      </div>
+      <div class="timeline" id="mention-tl">
+        <div class="icon"></div>
+        <div class="user">
+          <div class="sn" id="mention-sn">USER</div>
+          <div class="name">name</div>
+        </div>
+        <div class="tweet">
+          メンション<br>
+          The quick brown fox jumps over the lazy dog.
+        </div>
+        <div class="bottom">
+          <div class="date">
+            hh:mm:ss - day mo. yr.
+          </div>
+          <div class="marker">
+            ★ ⇄ ■
+          </div>
+        </div>
+      </div>
+      <div class="timeline" id="direct-tl">
+        <div class="icon"></div>
+        <div class="user">
+          <div class="sn" id="direct-sn">USER</div>
+          <div class="name">name</div>
+        </div>
+        <div class="tweet">
+          ダイレクトメッセージ<br>
+          The quick brown fox jumps over the lazy dog.
+        </div>
+        <div class="bottom">
+          <div class="date">
+            hh:mm:ss - day mo. yr.
+          </div>
+          <div class="marker">
+            ★ ⇄ ■
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container -->
+  <div id="xml-area">
+    <textarea id="xml-output" value=""></textarea>
+  </div>
+</div>
+<footer>
+  <a id="twitter" href="http://twitter.com/averoom">@averoom</a>
+</footer>
+</body>
+
+</html>

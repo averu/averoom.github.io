@@ -2,9 +2,7 @@
 <html class="no-js">
 <head>
   <link href='http://fonts.googleapis.com/css?family=Tenor+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,100' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatzible" content="IE=edge,chrome=1">
   <title>Lock★Room</title>
@@ -15,46 +13,55 @@
 </style>
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/main.css">
 <script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/main.js"></script>
 <script type="text/javascript" charset="utf-8">
-
-$(function(){
-  //画面の高さを取得して、変数wHに代入
-  var wW = $(window).width();
-  var wH = $(window).height();
-  console.log(wH);
-  //高さを取得を取得して、変数divHに代入
-  // var divW = $('.title').innerWidth();
-  // var divH = $('.title').innerHeight();
-  var divW = parseInt($('.title').css('margin-left'), 10);
-  var divH = parseInt($('.title').css('margin-top'), 10);
-  console.log(divH+","+divW);
-  // ボックス要素より画面サイズが大きければ実行
-  if(wH > divH){
-    // 高さを加える
-    $('.title').css('margin-top',wH/2+'px' );
-    $('.title').css('margin-bottom',wH/2+'px' );
-  }
-});
-$(window).resize(function() {
-  var wW = $(window).width();
-  var wH = $(window).height();
-  if(wH > 500){
-    // 高さを加える
-    $('.title').css('margin-top',wH/2+'px');
-  }
-});
-$(function() {
-  var rotate = function(logo, angle) {
-    logo.css({
-      "transform" : "rotate("+angle+"deg)"
-    });
-  }
-  $(window).scroll(function(){
-    rotate($("#star"), $(window).scrollTop()*0.4);
-  })
-});
+// $(document).ready(function(){
+//     /* 処理 */
+// });
+// /* ページ読み込み後 **************/
+// $(window).load(function(){
+//     /* 処理 */
+//     //画面の高さを取得して、変数wHに代入
+//     var wW = $(window).width();
+//     var wH = $(window).height();
+//     console.log(wH);
+//     //高さを取得を取得して、変数divHに代入
+//     // var divW = $('.title').innerWidth();
+//     // var divH = $('.title').innerHeight();
+//     var logo = $('#logo').innerHeight();
+//     var divW = parseInt($('.title').css('margin-left'), 10);
+//     var divH = parseInt($('.title').css('margin-top'), 10);
+//     console.log(logo+","+divW+","+divH);
+//     // ボックス要素より画面サイズが大きければ実行
+//     if(wH > divH){
+//       // 高さを加える
+//       $('.title').css('margin-top',(wH-logo)/2+'px' );
+//       $('.title').css('margin-bottom',(wH-logo)/2+'px' );
+//     }
+// });
+//
+// $(window).resize(function() {
+//   var wW = $(window).width();
+//   var wH = $(window).height();
+//   if(wH > 500){
+//     // 高さを加える
+//     $('.title').css('margin-top',(wH-logo)/2+'px');
+//     $('.title').css('margin-bottom',(wH-logo)/2+'px' );
+//   }
+// });
+// $(function() {
+//   var rotate = function(logo, angle) {
+//     logo.css({
+//       "transform" : "rotate("+angle+"deg)"
+//     });
+//   }
+//   $(window).scroll(function(){
+//     rotate($("#star"), $(window).scrollTop()*0.4);
+//   })
+// });
 </script>
 </head>
 <body>
@@ -66,22 +73,25 @@ $(function() {
       <li><a href="">WORK</a></li>
     </ul>
   </nav>
-  <header class="title">
-    <div>
-      <img id="logo" src="./img/title.png" />
+  <header>
+    <div class="title">
+      <img id="logo" src="./img/title.png" width="400" height="100" />
     </div>
   </header>
   <section>
-    <div>
+    <div class="right_section">
       <img id="icon" src="./img/icon001.png">
     </div>
-    <div>
-      <h1>ABOUT</h1>
-      <p>Name: AVERU</p>
-      <p>Twitter: @averoom</p>
-      <p>Pixiv: id=372131</p>
-      <p></p>
+    <div class="left_section">
+      <div class="about">
+        <h1>ABOUT</h1>
+        <p>Name: AVERU</p>
+        <p>Twitter: @averoom</p>
+        <p>Pixiv: id=372131</p>
+        <p></p>
+      </div>
     </div>
   </section>
+
 </body>
 </html>

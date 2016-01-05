@@ -8,62 +8,162 @@
    ========================================================================== */
 
 body {
-  font-family:"Meiryo UI",sans-serif;
-  width: 900px;
-  height:700px;
-  /* Firefox */
-  display:-moz-box;
+font-family:'Lucida Grande',
+ 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+ 'Meiryo', 'メイリオ', sans-serif;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  text-align:center;
+  background: #fff;
+  margin: 0 0 60px 0;
+}
+h1{
+  width: 600px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 4em;
+  margin: 30px auto;
+  color: #555;
+  text-shadow: 0px 0px 1px rgba(50,50,50, .5);
+}
+#hline{
+  width: 90%;
+  height: 3px;
+  margin: 2px auto;
+  background-image: -webkit-linear-gradient(left, rgba(27, 161, 226,0), rgba(27, 161, 226,100), rgba(27, 161, 226,0));
+  background-image:    -moz-linear-gradient(left, rgba(27, 161, 226,0), rgba(27, 161, 226,100), rgba(27, 161, 226,0));
+  background-image:     -ms-linear-gradient(left, rgba(27, 161, 226,0), rgba(27, 161, 226,100), rgba(27, 161, 226,0));
+  background-image:      -o-linear-gradient(left, rgba(27, 161, 226,0), rgba(27, 161, 226,100), rgba(27, 161, 226,0));
+}
+footer{
+  width: 100%;
+  height: 30px;
+  position: fixed !important;
+  position: absolute;
+  background: #1BA1E2;
+  bottom: 0;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+#twitter{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  color: #fff;
+  text-decoration:none;
+}
+#all{
+  width: 968px;
+  height: 654px;
+  text-align:center;
+  margin: 0 auto;
+    /* Firefox */
+/*  display:-moz-box;
   -moz-box-orient:horizontal;
   -moz-box-pack:center;
-  -moz-box-align:center;
+  -moz-box-align:center;*/
 
   /* Safari and Chrome */
-  display:-webkit-box;
+/*  display:-webkit-box;
   -webkit-box-orient:horizontal;
   -webkit-box-pack:center;
-  -webkit-box-align:center;
+  -webkit-box-align:center;*/
 
   /* W3C */
-  display:box;
+/*  display:box;
   box-orient:horizontal;
   box-pack:center;
-  box-align:center;
+  box-align:center;*/
   /*background: #FFFFF7;*/
-  background: #fff;
 }
 .krile {
-    width: 500px;
-    height: 700px;
-    background: #1BA1E2;
-    padding: 1px;
-
+  float: left;
+  width: 350px;
+  height: 653px;
+  background: #1BA1E2;
+  padding: 1px;
+  margin: 0px 5px;
+  text-align: left;
 }
 #color-content{
-  width: 400px;
-  height: 700px;
+  float: left;
+  width: 300px;
+  height: 653px;
   background: #FFFFFF;
   border: 1px solid;
   border-color: #1BA1E2;
-  margin: 5px 5px;
+  text-align: center;
+}
+#xml-area{
+  float: left;
+  width: 300px;
+  height: 651px;
+  background: #FFFFFF;
+  border: 1px solid;
+  padding: 1px;
+  border-color: #1BA1E2;
+  text-align: center;
+}
+#xml-output{
+  width: 294px;
+  height: 642px;
+  background: #FFFFFF;
+  border-color: #1BA1E2;
+}
+.colorwell{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align:right;
+  border:0;
+  padding:5px 10px;
+  font-size:16px;
+  border:solid 1px #ccc;
+  margin:0 0 5px;
+  width:100px;
+  height: 20px;
 }
 ul#colorlist{
   list-style-type: none;
   padding:0px 0px 0px 0px;
-  margin: 20px;
+  margin: 0px 20px 0px 0px;
 }
 li.item{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   text-align:right;
+  font-size:16px;
+}
+#picker{
+padding-left: 50px;
+margin-bottom: 20px;
+}
+#xml-submit{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  background-color: #1BA1E2;
+  border: 2px solid #fff;
+  color: #fff;
+  margin: 5px 0px;
+  width: 90%;
+  height: 40px;
+  text-align: center;
+}
+#xml-submit:hover {
+  background-color: #fff;
+  border-color: #1BA1E2;
+  color: #1BA1E2;
+  cursor:pointer;
 }
 .krile-content{
-  width: 500px;
-  height: 700px;
+  width: 350px;
+  height: 653px;
   background: #FFFFFF;
-  /*border: 1px solid;*/
   border-color: #1BA1E2;
-
 }
 .titlebar{
-  width: 500px;
+  width: 350px;
   height: 30px;
   color: #FFFFFF;
   background: #1BA1E2;
@@ -71,11 +171,11 @@ li.item{
 div#krile{
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: 14px;
+  font-size: 16px;
   padding: 5px 0px 0px 30px;
 }
 #top{
-  width: 500px;
+  width: 350px;
   height: 85px;
   padding: 4px 0px;
   overflow: hidden;
@@ -89,15 +189,15 @@ div#krile{
 }
 #write{
   float: left;
-  width: 434px;
-  height: 78px;
+  width: 284px;
+  height: 76px;
   margin: 0px 4px 0px 0px;
   border: 1px solid;
   border-color: #DDDDDD;
 }
 ul#tabbar{
   font-size: 14px;
-  width: 500px;
+  width: 350px;
   height: 30px;
   color: #E6E6E6;
   list-style-type: none;
@@ -123,7 +223,7 @@ li#default-tab{
   vertical-align:5px;
 }
 .timeline{
-  width: 485px;
+  width: 350px;
   height: 90px;
   color: #000000;
   padding: 10px 0px 0px 0px;
@@ -159,7 +259,7 @@ li#default-tab{
 }
 .user{
   float: left;
-  width: 409px;
+  width: 209px;
   height: 12px;
   margin: 0px 4px 6px 6px;
 }
@@ -197,27 +297,27 @@ li#default-tab{
 }
 .tweet{
   float: left;
-  width: 409px;
+  width: 280px;
   height: 30px;
   font-size: 12px;
   color: #000000;
-  margin: 6px 4px 0px 6px;
+  margin: 6px 4px 8px 6px;
 }
 .bottom{
   float: left;
-  width: 409px;
+  width: 250px;
   height: 20px;
 }
 .date{
   float: left;
   font-size: 10px;
   color: rgba(51, 51, 51, .7);
-  margin: 10px 150px 0px 6px;
+  margin: 0px 70px 0px 6px;
 }
 .marker{
   float: left;
-  font-size: 20px;
+  font-size: 16px;
   color: rgba(51, 51, 51, .5);
-  margin: 0px 4px 0px 50px;
+  margin: -5px 0px 0px 0px;
   text-shadow: 0px 0px 2px rgba(51, 51, 51, .3);
 }
