@@ -37,13 +37,13 @@ $(window).resize(function() {
     $('.title').css('height',wH+'px');
   }
 });
-$(function() {
-  var rotate = function(logo, angle) {
-    logo.css({
-      "transform" : "rotate("+angle+"deg)"
-    });
-  }
-  $(window).scroll(function(){
-    rotate($("#star"), $(window).scrollTop()*0.4);
-  })
-});
+// $(function() {
+//   var rotate = function(logo, angle) {
+//     logo.css({
+//       "transform" : "rotate("+angle+"deg)"
+//     });
+//   }
+//   $(window).scroll(function(){
+//     rotate($("#star"), $(window).scrollTop()*0.4);
+//   })
+// });
