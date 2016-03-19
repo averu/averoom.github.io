@@ -19,10 +19,10 @@ function poseChanges(poseDir){
   path = poseDir;
   for (var i = 0; i < 15; i++) {
     if(i<6){
-      fileArry[i] = '../img/'+ path +'/layer' + i +'/' + i + '' + presetArry[0][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ path +'/layer' + i +'/' + i + '' + presetArry[0][i] +'.png';
     }
     else{
-      fileArry[i] = '../img/layer' + i +'/' + i + '' + presetArry[0][i] +'.png';
+      fileArry[i] = '../Planche/img/layer' + i +'/' + i + '' + presetArry[0][i] +'.png';
     }
     layerCounter[i] = presetArry[0][i];
   }
@@ -32,10 +32,10 @@ function poseChanges(poseDir){
 function presetChanges(preset){
   for (var i = 0; i < 15; i++) {
     if(i<6){
-      fileArry[i] = '../img/'+ path +'/layer' + i +'/' + i + '' + presetArry[preset][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ path +'/layer' + i +'/' + i + '' + presetArry[preset][i] +'.png';
     }
     else{
-      fileArry[i] = '../img/layer' + i +'/' + i + '' + presetArry[preset][i] +'.png';
+      fileArry[i] = '../Planche/img/layer' + i +'/' + i + '' + presetArry[preset][i] +'.png';
     }
     layerCounter[i] = presetArry[preset][i];
     $(".counter#"+i).html(layerCounter[i]);
@@ -96,10 +96,10 @@ $('.return').on('click', function(){
     layerCounter[index] = imgLength[index];
   }
   if (index < 6) {
-    fileArry[index] = '../img/'+ path +'/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/'+ path +'/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../img/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
   }
   $(".counter#"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth * exp, canvasHeight * exp);
@@ -115,10 +115,10 @@ $('.next').on('click', function(){
     layerCounter[index] = 0;
   }
   if (index < 6) {
-    fileArry[index] = '../img/'+ path +'/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/'+ path +'/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../img/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
   }
   $(".counter#"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth * exp, canvasHeight * exp);
@@ -135,7 +135,7 @@ $('.check').on('click', function(){
     layerCounter[index] = 0;
     $(this).html("■");
   }
-  fileArry[index] = '../img/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
+  fileArry[index] = '../Planche/img/layer'+ index +'/'+ index + '' + layerCounter[index] + '.png';
   ctx.clearRect(0,0,canvasWidth * exp, canvasHeight * exp);
   numMaterials = fileArry.length;
   loadImges();
