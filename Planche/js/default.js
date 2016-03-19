@@ -16,7 +16,7 @@ $(document).ready(function() {
       fileArry[i] = '../Planche/img/'+ path +'/layer' + i +'/' + i + '' + presetArry[0][i] +'.png';
     }
     else{
-      fileArry[i] = '..Planche//img/layer' + i +'/' + i + '' + presetArry[0][i] +'.png';
+      fileArry[i] = '../Planche//img/layer' + i +'/' + i + '' + presetArry[0][i] +'.png';
     }
     layerCounter[i] = presetArry[0][i];
     $(".counter#"+i).html(layerCounter[i]);
