@@ -7,8 +7,8 @@ var layerCounter = new Array(partsLength[model]);
 var numMaterials = fileArry.length;
 var loadedCounter = 0;
 var imgObjArry = [];
-var canvas = document.getElementById('canvasElem');
-var ctx = canvas.getContext('2d');
+var canvas;
+var ctx;
 var modelInfo = {'yukari':[649,1068,'/pose1'],
                  '76maki':[1105,2000,'']
                 };
@@ -77,27 +77,39 @@ function modelChanges(change){
   fileArry = new Array(partsLength[model]);
   layerCounter = new Array(partsLength[model]);
   numMaterials = fileArry.length;
-  for (var i = 0; i < 15; i++) {
-    $("#name"+i).html("");
-    $("#return"+i).html("");
-    $("#next"+i).html("");
-    $("#counter"+i).html("");
-  }
+  $("#listname").html('');
+  $("#listreturn").html('');
+  $("#listcounter").html('');
+  $("#listnext").html('');
+  $("#listcanvas").html('');
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<8){
       fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     else{
-      fileArry[i] = '../Planche/img/' + model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     layerCounter[i] = defaultPose[model][i];
-    $("#name"+i).html(partsName[model][i]);
-    $("#return"+i).html('◀');
-    $("#counter"+i).html(layerCounter[i]);
-    $("#next"+i).html('▶');
+    $("#listname").append('<li class="name" id="name'+i+'" value="'+i+'">'+ partsName[model][i] +'</li>');
+    $("#listreturn").append('<li class="return" id="return'+i+'" value="'+i+'">◀</li>');
+    $("#listcounter").append('<li class="counter" id="counter'+i+'">' + layerCounter[i] + '</li>');
+    $("#listnext").append('<li class="next" id="next'+i+'" value="'+i+'">▶</li>');
+    // $("#counter"+i).html(layerCounter[i]);
   }
-  canvasWindowSize();
+  w = $(window).width();
+  if(w > 550){
+    $("#listcanvas").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
+  }else{
+    $("#listname").html('');
+    $("#listcounter").html('');
+    $("#listreturn").css({'padding-top': 50});
+    $("#listnext").css({'padding-top': 50});
+    $("#listcounter").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
+  }
+  canvas = document.getElementById('canvasElem');
+  ctx = canvas.getContext('2d');
   ctx.clearRect(0,0,canvasWidth * exp, canvasHeight * exp);
+  canvasWindowSize();
   loadImges();
 }
 function adultMode(){
@@ -126,12 +138,18 @@ function adultMode(){
   loadImges();
 }
 function canvasWindowSize(){
-  var h = $(window).height();
-  if (h < canvasHeight) {
-    exp = h / canvasHeight;
+  h = $(window).height();
+  w = $(window).width();
+  if (w < 550) {
+    exp =  350 / canvasWidth;
     canvas.width = canvasWidth * exp;
     canvas.height = canvasHeight * exp;
-    // ctx.scale(exp, exp);
+  }else{
+    if (h < canvasHeight) {
+      exp = h / canvasHeight;
+      canvas.width = canvasWidth * exp;
+      canvas.height = canvasHeight * exp;
+    }
   }
 }
 function canvasDefault(){
@@ -139,8 +157,13 @@ function canvasDefault(){
     exp = 1;
     $("#canvasResize").html("窓サイズ");
   }else{
-    var h = $(window).height();
-    exp = h / canvasHeight;
+    if (w < 550) {
+      exp =  350 / canvasWidth;
+    }else{
+      if (h < canvasHeight) {
+        exp = h / canvasHeight;
+      }
+    }
     $("#canvasResize").html("原寸大");
   }
   canvas.width = canvasWidth * exp;

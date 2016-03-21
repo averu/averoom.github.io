@@ -3,10 +3,10 @@ var canvasHeight = 1068;
 // var canvasWidth = 608;
 // var canvasHeight = 1000;
 var exp = 1;
+var h = $(window).height();
+var w = $(window).width();
 $(document).ready(function() {
   $('.drawer').drawer();
-  var i = 0;
-  canvasWindowSize();
   for (var i = 0; i < 17; i++) {
     if(i<8){
       fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[0][i] +'.png';
@@ -21,6 +21,19 @@ $(document).ready(function() {
     $("#listnext").append('<li class="next" id="next'+i+'" value="'+i+'">▶</li>');
     // $("#counter"+i).html(layerCounter[i]);
   }
+  w = $(window).width();
+  if(w > 550){
+    $("#listcanvas").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
+  }else{
+    $("#listname").html('');
+    $("#listcounter").html('');
+    $("#listreturn").css({'padding-top': 50});
+    $("#listnext").css({'padding-top': 50});
+    $("#listcounter").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
+  }
+  canvas = document.getElementById('canvasElem');
+  ctx = canvas.getContext('2d');
+  canvasWindowSize();
   loadImges();
 });
 $('.drawer').drawer({
