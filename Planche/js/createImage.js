@@ -1,7 +1,7 @@
 var model = 'yukari';
 var path = '/pose1';
 var adult = false;
-var partsLength = {'yukari':15, '76maki':12};
+var partsLength = {'yukari':17, '76maki':12};
 var fileArry = new Array(partsLength[model]);
 var layerCounter = new Array(partsLength[model]);
 var numMaterials = fileArry.length;
