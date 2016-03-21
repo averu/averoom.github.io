@@ -98,7 +98,7 @@ function modelChanges(change){
     // $("#counter"+i).html(layerCounter[i]);
   }
   w = $(window).width();
-  if(w < deviceSize){
+  if(w > deviceSize){
     $("#listcanvas").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
   }else{
     $("#listname").html('');
