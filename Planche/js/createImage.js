@@ -42,10 +42,10 @@ function poseChanges(poseDir){
   path = poseDir;
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<8){
-      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + presetArry[0][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[0][i] +'.png';
     }
     else{
-      fileArry[i] = '../img/'+ model +'/layer' + i +'/' + presetArry[0][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ model +'/layer' + i +'/' + presetArry[0][i] +'.png';
     }
     layerCounter[i] = presetArry[0][i];
   }
@@ -58,10 +58,10 @@ function presetChanges(preset){
   }
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<8){
-      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + presetArry[preset][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[preset][i] +'.png';
     }
     else{
-      fileArry[i] = '../img/' + model + '/layer' + i +'/' + presetArry[preset][i] +'.png';
+      fileArry[i] = '../Planche/img/' + model + '/layer' + i +'/' + presetArry[preset][i] +'.png';
     }
     layerCounter[i] = presetArry[preset][i];
     $("#counter"+i).html(layerCounter[i]);
@@ -85,10 +85,10 @@ function modelChanges(change){
   }
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<8){
-      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     else{
-      fileArry[i] = '../img/' + model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = '../Planche/img/' + model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     layerCounter[i] = defaultPose[model][i];
     $("#name"+i).html(partsName[model][i]);
@@ -120,7 +120,7 @@ function adultMode(){
     adult = true;
     $("#adult").html('健全');
   }
-  fileArry[0] = '../img/'+ model + path +'/layer0/' + layerCounter[0] +'.png';
+  fileArry[0] = '../Planche/img/'+ model + path +'/layer0/' + layerCounter[0] +'.png';
   $("#counter0").html(layerCounter[0]);
   ctx.clearRect(0,0,canvasWidth * exp, canvasHeight * exp);
   loadImges();
@@ -182,10 +182,10 @@ $(document).on('click', '.return', function(){
     layerCounter[index] = imgLength[model+path][index];
   }
   if (index < 8) {
-    fileArry[index] = '../img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../img/' + model + '/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/' + model + '/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   $("#counter"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth * exp, canvasHeight * exp);
@@ -201,10 +201,10 @@ $(document).on('click', '.next', function(){
     layerCounter[index] = 0;
   }
   if (index < 8) {
-    fileArry[index] = '../img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../img/'+ model + '/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../Planche/img/'+ model + '/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   $(".counter#counter"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth * exp, canvasHeight * exp);

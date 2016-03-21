@@ -9,10 +9,10 @@ $(document).ready(function() {
   canvasWindowSize();
   for (var i = 0; i < 17; i++) {
     if(i<8){
-      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + presetArry[0][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[0][i] +'.png';
     }
     else{
-      fileArry[i] = '../img/'+ model + '/layer' + i +'/' + presetArry[0][i] +'.png';
+      fileArry[i] = '../Planche/img/'+ model + '/layer' + i +'/' + presetArry[0][i] +'.png';
     }
     layerCounter[i] = presetArry[0][i];
     $("#listname").append('<li class="name" id="name'+i+'" value="'+i+'">'+ partsName[model][i] +'</li>');
