@@ -9,7 +9,7 @@ var loadedCounter = 0;
 var imgObjArry = [];
 var canvas;
 var ctx;
-var deviceSize = 550;
+var deviceSize = 500;
 var modelInfo = {'yukari':[649,1068,'/pose1'],
                  '76maki':[1105,2000,'']
                 };
