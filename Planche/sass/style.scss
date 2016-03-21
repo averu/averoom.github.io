@@ -15,12 +15,6 @@ body{
   margin: 0;
   font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
 }
-#container{
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  display: table;
-}
 .name,.counter{
   text-align: right;
   list-style: none;
@@ -33,11 +27,20 @@ body{
   text-align: center;
   width: 30px;
 }
+#container{
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  display: table;
+}
 .list{
   position: relative;
   display: table-cell;
   vertical-align: middle;
   padding: 0px;
+}
+.name{
+  width: 150px;
 }
 .return{
   transform-origin: right;
@@ -68,12 +71,37 @@ body{
   text-align: center;
   color: $nav_text;
   background-color: $save_base;
+  padding: 0;
   &:hover{
     color: $save_base;
     background-color: $nav_text;
     box-sizing: border-box;
     transition: all .3s;
   }
+}
+.drawer-effect{
+  width: 150px;
+  height: 150px;
+
+  position: absolute;
+  border-radius: 100%;
+  pointer-events: none;
+  transform: scale(0);
+  opacity: 0;
+  background-color: $save_base;
+}
+.drawer-effect.is-show{
+  animation: brand-menu-effect 0.75s ease-out;
+}
+/* アニメーションの定義 */
+@keyframes brand-menu-effect{
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
 }
 .drawer-menu-item{
   margin: 0;
@@ -96,7 +124,7 @@ body{
 .drawer-dropdown-menu-item{
   color: $nav_text;
   background-color: $nav_base;
-  padding: 6px 48px ;
+  padding: 6px 10px 6px 48px ;
   font-size: $side_sub_font;
   line-height: 2em;
   transition: transform 0.3s linear;
@@ -107,13 +135,17 @@ body{
     transition: all .3s;
   }
 }
-#dataImg,#canvasResize,#twitterID{
+.brand-menu{
   display: block;
   color: $nav_text;
   text-decoration: none;
   &:hover{
     color: $save_base;
   }
+}
+.brand-menu-effect, .dropdown-menu-effect{
+  overflow: hidden;
+  position: relative;
 }
 #title{
   font-size: 3rem;
