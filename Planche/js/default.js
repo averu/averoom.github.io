@@ -25,7 +25,7 @@ $(document).ready(function() {
   if(w > deviceSize){
     $("#listcanvas").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
   }else{
-    $("body").css({'width': 400});
+    $("body").css({'width': deviceSize});
     $("#listname").html('');
     $("#listcounter").html('');
     $("#listreturn").css({'padding-top': 50});
