@@ -141,7 +141,7 @@ function canvasWindowSize(){
   h = $(window).height();
   w = $(window).width();
   if (w < 550) {
-    exp =  350 / canvasWidth;
+    exp =  300 / canvasWidth;
     canvas.width = canvasWidth * exp;
     canvas.height = canvasHeight * exp;
   }else{
@@ -158,7 +158,7 @@ function canvasDefault(){
     $("#canvasResize").html("窓サイズ");
   }else{
     if (w < 550) {
-      exp =  350 / canvasWidth;
+      exp =  300 / canvasWidth;
     }else{
       if (h < canvasHeight) {
         exp = h / canvasHeight;
