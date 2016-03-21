@@ -9,6 +9,7 @@ var loadedCounter = 0;
 var imgObjArry = [];
 var canvas;
 var ctx;
+var deviceSize = 550;
 var modelInfo = {'yukari':[649,1068,'/pose1'],
                  '76maki':[1105,2000,'']
                 };
@@ -97,7 +98,7 @@ function modelChanges(change){
     // $("#counter"+i).html(layerCounter[i]);
   }
   w = $(window).width();
-  if(w > 550){
+  if(w < deviceSize){
     $("#listcanvas").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
   }else{
     $("#listname").html('');
@@ -140,8 +141,8 @@ function adultMode(){
 function canvasWindowSize(){
   h = $(window).height();
   w = $(window).width();
-  if (w < 550) {
-    exp =  300 / canvasWidth;
+  if (w < deviceSize) {
+    exp =  w / canvasWidth;
     canvas.width = canvasWidth * exp;
     canvas.height = canvasHeight * exp;
   }else{
@@ -157,8 +158,8 @@ function canvasDefault(){
     exp = 1;
     $("#canvasResize").html("窓サイズ");
   }else{
-    if (w < 550) {
-      exp =  300 / canvasWidth;
+    if (w < deviceSize) {
+      exp =  w / canvasWidth;
     }else{
       if (h < canvasHeight) {
         exp = h / canvasHeight;
