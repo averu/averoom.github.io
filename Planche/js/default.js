@@ -7,35 +7,9 @@ var h = $(window).height();
 var w = $(window).width();
 $(document).ready(function() {
   $('.drawer').drawer();
-  for (var i = 0; i < 17; i++) {
-    if(i<8){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[0][i] +'.png';
-    }
-    else{
-      fileArry[i] = '../Planche/img/'+ model + '/layer' + i +'/' + presetArry[0][i] +'.png';
-    }
-    layerCounter[i] = presetArry[0][i];
-    $("#listname").append('<li class="name" id="name'+i+'" value="'+i+'">'+ partsName[model][i] +'</li>');
-    $("#listreturn").append('<li class="return" id="return'+i+'" value="'+i+'">◀</li>');
-    $("#listcounter").append('<li class="counter" id="counter'+i+'">' + layerCounter[i] + '</li>');
-    $("#listnext").append('<li class="next" id="next'+i+'" value="'+i+'">▶</li>');
-    // $("#counter"+i).html(layerCounter[i]);
-  }
-  w = $(window).width();
-  if(w > deviceSize){
-    $("#listcanvas").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
-  }else{
-    $("body").css({'width': deviceSize});
-    $("#listname").html('');
-    $("#listcounter").html('');
-    $("#listreturn").css({'padding-top': 50});
-    $("#listnext").css({'padding-top': 50});
-    $("#listcounter").append('<canvas id="canvasElem" width="649" height="1068"></canvas>');
-  }
-  canvas = document.getElementById('canvasElem');
-  ctx = canvas.getContext('2d');
-  canvasWindowSize();
-  loadImges();
+  $('#wrapper').drawer();
+  $('#listcanvas').drawer();
+  listMenuRefresh();
 });
 $('.drawer').drawer({
 iscroll: {
@@ -45,4 +19,29 @@ iscroll: {
   preventDefault: false
 },
 showOverlay: true
+});
+$('#wrapper').drawer({
+iscroll: {
+  // Configuring the iScroll
+  // https://github.com/cubiq/iscroll#configuring-the-iscroll
+  mouseWheel: true,
+  preventDefault: false
+},
+showOverlay: false
+});
+$('#listcanvas').drawer({
+iscroll: {
+  // Configuring the iScroll
+  // https://github.com/cubiq/iscroll#configuring-the-iscroll
+  mouseWheel: true,
+  preventDefault: false
+},
+showOverlay: false
+});
+$(window).on('resize', function(){
+// 処理を記載
+  h = $(window).innerHeight();
+  $(".drawer-nav.list-nav").css({'top': h - 100,
+                         'max-height': '200px'});
+  // canvasWindowSize();
 });
