@@ -40,8 +40,11 @@ showOverlay: false
 });
 $(window).on('resize', function(){
 // 処理を記載
+if (w < deviceSize) {
   h = $(window).innerHeight();
   $(".drawer-nav.list-nav").css({'top': h - 100,
                          'max-height': '200px'});
   // canvasWindowSize();
+}
+
 });
