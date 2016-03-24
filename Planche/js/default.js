@@ -40,6 +40,7 @@ showOverlay: false
 });
 $(window).on('resize', function(){
 // 処理を記載
+w = $(window).width();
 if (w < deviceSize) {
   h = $(window).innerHeight();
   $(".drawer-nav.list-nav").css({'top': h - 100,
