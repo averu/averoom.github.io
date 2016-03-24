@@ -109,7 +109,7 @@ function modelChanges(change){
   $('#list-menu').html('');
   $("#listcanvas").html('');
   listMenuRefresh();
-  canvasDefault();
+  // canvasDefault();
 }
 function listMenuRefresh(){
   for (var i = 0; i < defaultPose[model].length; i++) {
