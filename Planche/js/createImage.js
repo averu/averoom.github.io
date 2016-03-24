@@ -1,7 +1,7 @@
 var model = 'yukari';
 var path = '/pose1';
 var adult = false;
-var partsLength = {'yukari':18, '76_maki':12, '76_yukari':19, 'yu_yukari':12};
+var partsLength = {'yukari':18, '76_maki':12, '76_yukari':19, 'yu_yukari':13};
 var fileArry = new Array(partsLength[model]);
 var layerCounter = new Array(partsLength[model]);
 var numMaterials = fileArry.length;
@@ -28,7 +28,7 @@ var presetArry = {
 var defaultPose = {'yukari':[5,0,0,0,0,0,1,2,0,1,4,0,29,1,1,0,0,0],
                  '76_maki':[0,0,0,0,0,0,0,0,0,0,0,0],
                  '76_yukari':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                 'yu_yukari':[0,0,0,0,0,0,0,0,0,0,0,0]
+                 'yu_yukari':[0,0,0,0,0,0,0,0,0,0,0,0,0]
                 };
 var imgLength = {'yukari/pose1':[6 ,4,4,4,1,3,2,3,0,7,4,3,52,1,2,4,23,3],
                  'yukari/pose2':[13,4,4,4,1,3,2,3,0,7,4,3,52,1,2,4,23,3],
@@ -37,7 +37,7 @@ var imgLength = {'yukari/pose1':[6 ,4,4,4,1,3,2,3,0,7,4,3,52,1,2,4,23,3],
                  'yukari/pose5':[6 ,4,4,4,1,3,2,3,0,7,4,3,52,1,2,4,23,3],
                  '76_maki':[1,1,0,7,11,3,7,4,7,0,5],
                  '76_yukari':[0,1,1,1,1,1,1,1,1,1,1,17,14,5,7,7,2,3,1],
-                 'yu_yukari':[4,3,3,2,1,3,23,7,18,1,1,6]
+                 'yu_yukari':[4,3,3,2,1,3,23,7,18,1,1,1,6]
                 };
 var partsName = {'yukari':['服装','下着(上)','下着(下)','ガーター','スカート','上着','ニーソ','パーカー','サイド髪','リング',
                           'ヘアピン','影','表情','鼻','頬','汗','感情','アレ'],
@@ -58,10 +58,10 @@ function poseChanges(poseDir){
   path = poseDir;
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
+      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
     }
     else{
-      fileArry[i] = '../Planche/img/'+ model +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
+      fileArry[i] = '../img/'+ model +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
     }
     layerCounter[i] = presetArry[model+0][i];
   }
@@ -74,10 +74,10 @@ function presetChanges(preset){
   }
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[model+preset][i] +'.png';
+      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + presetArry[model+preset][i] +'.png';
     }
     else{
-      fileArry[i] = '../Planche/img/' + model + '/layer' + i +'/' + presetArry[model+preset][i] +'.png';
+      fileArry[i] = '../img/' + model + '/layer' + i +'/' + presetArry[model+preset][i] +'.png';
     }
     layerCounter[i] = presetArry[model+preset][i];
     $("#counter"+i).html(layerCounter[i]);
@@ -88,9 +88,9 @@ function presetChanges(preset){
 function defaultChanges(){
   for (var i = 0; i < defaultPose[model].length; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
     }else{
-      fileArry[i] = '../Planche/img/' + model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = '../img/' + model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     layerCounter[i] = defaultPose[model][i];
     $("#counter"+i).html(layerCounter[i]);
@@ -114,10 +114,10 @@ function modelChanges(change){
 function listMenuRefresh(){
   for (var i = 0; i < defaultPose[model].length; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = '../img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     else{
-      fileArry[i] = '../Planche/img/'+ model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = '../img/'+ model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     layerCounter[i] = defaultPose[model][i];
     $('#list-menu').append('<ul class="list-menu-item" id="'+i+'"></ul>');
@@ -178,7 +178,7 @@ function adultMode(){
     adult = true;
     $("#adult").html('<i class="fa fa-heart fa-lg"></i> 健全');
   }
-  fileArry[0] = '../Planche/img/'+ model + path +'/layer0/' + layerCounter[0] +'.png';
+  fileArry[0] = '../img/'+ model + path +'/layer0/' + layerCounter[0] +'.png';
   $("#counter0").html(layerCounter[0]);
   ctx.clearRect(0,0,canvasWidth, canvasHeight);
   loadImges();
@@ -259,10 +259,10 @@ $(document).on('click', '.return', function(){
     layerCounter[index] = imgLength[model+path][index];
   }
   if (index < poseLayerCounter) {
-    fileArry[index] = '../Planche/img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../Planche/img/' + model + '/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../img/' + model + '/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   $("#counter"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth, canvasHeight);
@@ -278,10 +278,10 @@ $(document).on('click', '.next', function(){
     layerCounter[index] = 0;
   }
   if (index < poseLayerCounter) {
-    fileArry[index] = '../Planche/img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../Planche/img/'+ model + '/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = '../img/'+ model + '/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   $(".counter#counter"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth, canvasHeight);
