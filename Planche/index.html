@@ -30,11 +30,11 @@
       <span class="sr-only">toggle navigation</span>
       <span class="drawer-hamburger-icon"></span>
     </button>
-    <nav class="drawer-nav" role="navigation">
+    <nav class="drawer-nav list-nav" role="navigation">
       <ul class="drawer-menu">
         <!-- <li class="drawer-brand"><a id="dataImg" href="#" onclick="replaceCanvasWithImage()">Save</a></li> -->
         <li class="drawer-brand title">
-          <img src="../Planche/img/title.png" alt="" />
+          <img src="./img/title.png" alt="" />
           <!-- <div id="title"></div> -->
         </li>
         <li class="drawer-dropdown">
@@ -63,16 +63,23 @@
         </li>
         <li class="drawer-dropdown">
           <a class="drawer-menu-item dropdown-menu-effect" href="javascript:void(0)" data-toggle="dropdown" role="button" aria-expanded="true">
-            モデル <span class="drawer-caret"></span><span class="drawer-effect">
+            結月ゆかり <span class="drawer-caret"></span><span class="drawer-effect">
           </a>
           <ul class="drawer-dropdown-menu">
-            <li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('yukari')">結月ゆかり(ペテン師)</a></li>
-						<li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('yu_yukari')">結月ゆかり(由)</a></li>
-					  <li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('76_yukari')">結月ゆかり(七六)</a></li>
-            <li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('76_maki')">弦巻マキ(七六)</a></li>
+            <li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('yukari')">ペテン師(@sagisagiz)</a></li>
+						<li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('yu_yukari')">由 (@yu65026)</a></li>
+					  <li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('76_yukari')">七六(@nanaroku76)</a></li>
           </ul>
         </li>
-        <li class="drawer-brand brand-menu-effect"><a class="brand-menu" id="canvasResize" href="javascript:void(0)" onclick="canvasDefault()">原寸大</a><span class="drawer-effect"></span></li>
+        <li class="drawer-dropdown">
+          <a class="drawer-menu-item dropdown-menu-effect" href="javascript:void(0)" data-toggle="dropdown" role="button" aria-expanded="true">
+            弦巻マキ <span class="drawer-caret"></span><span class="drawer-effect">
+          </a>
+          <ul class="drawer-dropdown-menu">
+            <li><a class="drawer-dropdown-menu-item" href="javascript:void(0)" onClick="modelChanges('76_maki')">七六(@nanaroku76)</a></li>
+          </ul>
+        </li>
+        <li class="drawer-brand brand-menu-effect"><a class="brand-menu" id="canvasResize" href="javascript:void(0)" onclick="canvasDefault()"><i class="fa fa-expand fa-lg"></i> 原寸大</a><span class="drawer-effect"></span></li>
         <li class="drawer-brand brand-menu-effect"><a class="brand-menu" id="presetChange" href="javascript:void(0)" onclick="defaultChanges()"><i class="fa fa-refresh fa-lg"></i> 初期化<span class="drawer-effect"></span></a></li>
         <li class="drawer-brand brand-menu-effect"><a class="brand-menu" id="adult" href="javascript:void(0)" onclick="adultMode()"><i class="fa fa-heart fa-lg"></i> R18</a><span class="drawer-effect"></span></li>
         <!-- <li class="drawer-brand brand-menu-effect"><a class="brand-menu" id="dataImg" href="javascript:void(0)" onclick="saveImges()">保存</a><span class="drawer-effect"></span></li> -->
@@ -84,7 +91,7 @@
     </nav>
   </header>
 	<div class="main">
-		<div id="wrapper" class="drawer-nav list-nav"  role="main">
+		<div id="wrapper" class="drawer-nav list-menu"  role="main">
 	    <ul class="drawer-menu">
 	      <li class="drawer-dropdown toggle-margin" id="list-menu">
 	      </li>

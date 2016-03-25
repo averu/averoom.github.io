@@ -58,10 +58,10 @@ function poseChanges(poseDir){
   path = poseDir;
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
+      fileArry[i] = './img/'+ model + path +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
     }
     else{
-      fileArry[i] = '../Planche/img/'+ model +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
+      fileArry[i] = './img/'+ model +'/layer' + i +'/' + presetArry[model+0][i] +'.png';
     }
     layerCounter[i] = presetArry[model+0][i];
   }
@@ -74,10 +74,10 @@ function presetChanges(preset){
   }
   for (var i = 0; i < partsLength[model]; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + presetArry[model+preset][i] +'.png';
+      fileArry[i] = './img/'+ model + path +'/layer' + i +'/' + presetArry[model+preset][i] +'.png';
     }
     else{
-      fileArry[i] = '../Planche/img/' + model + '/layer' + i +'/' + presetArry[model+preset][i] +'.png';
+      fileArry[i] = './img/' + model + '/layer' + i +'/' + presetArry[model+preset][i] +'.png';
     }
     layerCounter[i] = presetArry[model+preset][i];
     $("#counter"+i).html(layerCounter[i]);
@@ -88,9 +88,9 @@ function presetChanges(preset){
 function defaultChanges(){
   for (var i = 0; i < defaultPose[model].length; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = './img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
     }else{
-      fileArry[i] = '../Planche/img/' + model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = './img/' + model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     layerCounter[i] = defaultPose[model][i];
     $("#counter"+i).html(layerCounter[i]);
@@ -114,10 +114,10 @@ function modelChanges(change){
 function listMenuRefresh(){
   for (var i = 0; i < defaultPose[model].length; i++) {
     if(i<poseLayerCounter){
-      fileArry[i] = '../Planche/img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = './img/'+ model + path +'/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     else{
-      fileArry[i] = '../Planche/img/'+ model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
+      fileArry[i] = './img/'+ model + '/layer' + i +'/' + defaultPose[model][i] +'.png';
     }
     layerCounter[i] = defaultPose[model][i];
     $('#list-menu').append('<ul class="list-menu-item" id="'+i+'"></ul>');
@@ -139,7 +139,7 @@ function listMenuRefresh(){
     $("#listcanvas").append('<img id="imgElem" src="" download="yukari.png" alt=""/>');
     // canvasWindowSize();
     $('.counter').remove();
-    $(".drawer-nav.list-nav").css({'top': h - 100,
+    $(".drawer-nav.list-menu").css({'top': h - 100,
                            'max-height': '100px'});
     $(".list-menu-item").css({
                               'margin': '0 auto',
@@ -178,7 +178,7 @@ function adultMode(){
     adult = true;
     $("#adult").html('<i class="fa fa-heart fa-lg"></i> 健全');
   }
-  fileArry[0] = '../Planche/img/'+ model + path +'/layer0/' + layerCounter[0] +'.png';
+  fileArry[0] = './img/'+ model + path +'/layer0/' + layerCounter[0] +'.png';
   $("#counter0").html(layerCounter[0]);
   ctx.clearRect(0,0,canvasWidth, canvasHeight);
   loadImges();
@@ -206,7 +206,7 @@ function canvasDefault(){
   // w = $(window).width();
   if (exp < 1) {
     exp = 1;
-    $("#canvasResize").html("窓サイズ");
+    $("#canvasResize").html('<i class="fa fa-compress fa-lg"></i> 窓サイズ');
   }else{
     if (w < deviceSize) {
       exp =  (h - 100) / canvasHeight;
@@ -215,7 +215,7 @@ function canvasDefault(){
         exp = h / canvasHeight;
       }
     }
-    $("#canvasResize").html("原寸大");
+    $("#canvasResize").html('<i class="fa fa-expand fa-lg"></i> 原寸大');
   }
   $('#imgElem').width(canvasWidth * exp +'px');
   $('#imgElem').height(canvasHeight * exp +'px');
@@ -259,10 +259,10 @@ $(document).on('click', '.return', function(){
     layerCounter[index] = imgLength[model+path][index];
   }
   if (index < poseLayerCounter) {
-    fileArry[index] = '../Planche/img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = './img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../Planche/img/' + model + '/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = './img/' + model + '/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   $("#counter"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth, canvasHeight);
@@ -278,10 +278,10 @@ $(document).on('click', '.next', function(){
     layerCounter[index] = 0;
   }
   if (index < poseLayerCounter) {
-    fileArry[index] = '../Planche/img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = './img/'+ model + path +'/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   else{
-    fileArry[index] = '../Planche/img/'+ model + '/layer'+ index +'/' + layerCounter[index] + '.png';
+    fileArry[index] = './img/'+ model + '/layer'+ index +'/' + layerCounter[index] + '.png';
   }
   $(".counter#counter"+index).html(layerCounter[index]);
   ctx.clearRect(0,0,canvasWidth, canvasHeight);
