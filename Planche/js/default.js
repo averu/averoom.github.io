@@ -10,7 +10,7 @@ $(document).ready(function() {
   $('#wrapper').drawer();
   $('#listcanvas').drawer();
   listMenuRefresh();
-  $(".drawer-nav.list-menu").css({'overflow': 'auto'});
+  // $(".drawer-nav.list-menu").css({'overflow': 'auto'});
 });
 $('.drawer').drawer({
 iscroll: {
@@ -26,7 +26,8 @@ iscroll: {
   // Configuring the iScroll
   // https://github.com/cubiq/iscroll#configuring-the-iscroll
   mouseWheel: true,
-  preventDefault: false
+  preventDefault: false,
+  hideScrollbar: false
 },
 showOverlay: false
 });
