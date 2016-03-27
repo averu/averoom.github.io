@@ -27,8 +27,6 @@ iscroll: {
   // https://github.com/cubiq/iscroll#configuring-the-iscroll
   mouseWheel: true,
   preventDefault: false,
-  // hideScrollbar: true
-  scrollbars:true
 },
 showOverlay: false
 });
@@ -38,7 +36,6 @@ iscroll: {
   // https://github.com/cubiq/iscroll#configuring-the-iscroll
   mouseWheel: true,
   preventDefault: false,
-  scrollbars:true
 },
 showOverlay: false
 });
