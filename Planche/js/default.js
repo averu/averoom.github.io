@@ -10,6 +10,7 @@ $(document).ready(function() {
   $('#wrapper').drawer();
   $('#listcanvas').drawer();
   listMenuRefresh();
+  $(".drawer-nav.list-menu").css({'overflow': 'auto'});
 });
 $('.drawer').drawer({
 iscroll: {
